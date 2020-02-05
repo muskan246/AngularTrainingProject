@@ -1,0 +1,32 @@
+<div>
+    <h3> SEARCH USER BY ID</h3>
+    <form [formGroup]="getUserForm">
+        <input type="text" placeholder="Enter ID" formControlName="id" required>
+        <br><br>
+        <button type="submit" (click)="onGetEmployee()">SEARCH</button>
+    </form>
+</div>
+
+<div *ngIf="getrecord!=null">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Mobile Number</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{getrecord.id}}</td>
+                <td>{{getrecord.name}}</td>
+                <td>{{getrecord.email}}</td>
+                <td> {{getrecord.password}}</td>
+                <td>{{getrecord.mobile}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

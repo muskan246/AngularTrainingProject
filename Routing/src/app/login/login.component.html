@@ -1,0 +1,17 @@
+<div>
+    <form [formGroup]="loginForm">
+        <input type="text" placeholder="Enter Email ID" formControlName="email" required>
+        <span *ngIf="loginForm.controls.email.errors?.required">Email is required</span>
+        <span *ngIf="loginForm.controls.email.errors?.pattern">Provide valid email</span>
+
+        <br>
+        <input type="password" placeholder="Enter your Password" formControlName="password" required>
+        <span *ngIf="loginForm.controls.password.errors?.required">Password is required</span>
+        <span *ngIf="loginForm.controls.password.errors?.pattern">Provide valid password</span>
+
+        <br>
+
+
+        <button type="submit" (click)="loginUser()">LOGIN </button>
+    </form>
+</div>

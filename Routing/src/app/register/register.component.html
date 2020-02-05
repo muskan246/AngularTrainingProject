@@ -1,0 +1,33 @@
+<div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <input type="text" placeholder="Enter your ID" formControlName="id" required>
+        <span *ngIf="registerForm.controls.id.errors?.required">ID is required</span>
+
+
+        <br>
+        <input type="text" placeholder="Enter your Name" formControlName="name">
+        <span *ngIf="registerForm.controls.name.errors?.required">Name is required</span>
+        <span *ngIf="registerForm.controls.name.errors?.pattern">Only alphabets is allowed</span>
+        <br>
+        <input type="text" placeholder="Enter Email ID" formControlName="email" required>
+        <span *ngIf="registerForm.controls.email.errors?.required">Email is required</span>
+        <span *ngIf="registerForm.controls.email.errors?.pattern">Provide valid email</span>
+
+        <br>
+        <input type="password" placeholder="Enter your Password" formControlName="password" required>
+        <span *ngIf="registerForm.controls.password.errors?.required">Password is required</span>
+        <span *ngIf="registerForm.controls.password.errors?.pattern">Provide valid password</span>
+
+        <br>
+        <input type="number" placeholder="Enter your Mobile Number" formControlName="mobile" required>
+        <span *ngIf="registerForm.controls.mobile.errors?.required">Mobile is required</span>
+        <span *ngIf="registerForm.controls.mobile.errors?.pattern">Provide valid Mobile</span>
+
+
+        <br>
+
+        <button type="submit" (click)="onRegisterEmployee()">REGISTER </button>
+
+    </form>
+</div>

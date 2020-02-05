@@ -1,0 +1,34 @@
+<!-- <app-login></app-login>
+<app-register></app-register> -->
+<!-- <app-user-detail></app-user-detail> -->
+<div class="page-header">
+    <div class="container">
+        <h1>Router Sample</h1>
+
+        <div class="navLinks">
+            <td>
+                <a [routerLink]="['/Login']">Login</a>
+            </td>
+            <td>
+                <a [routerLink]="['/Details']">Print details</a>
+            </td>
+            <td>
+                <a [routerLink]="['/Delete']">Delete User</a>
+            </td>
+            <td>
+                <a [routerLink]="['/Search']">Search User</a>
+            </td>
+            <td>
+                <a [routerLink]="['/Update']">Update User</a>
+            </td>
+        </div>
+
+
+    </div>
+</div>
+
+<div id="content">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>

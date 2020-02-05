@@ -1,0 +1,30 @@
+<h3> {{errorMSg}}</h3>
+<h2>{{value|json}}</h2>
+<!-- <label>Search By ID</label> -->
+<!-- <input type="text" name="id" placeholder="Enter your ID" value=""> -->
+<br>
+<br>
+<div *ngIf="user.length>0">
+    <table mat-table id="todo">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <!-- <th>Password</th> -->
+                <th>Mobile Number</th>
+                <!-- <th>Action</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of user ; index as j">
+                <td>{{i.id}}</td>
+                <td>{{i.name | uppercase}}</td>
+                <td>{{i.email}}</td>
+                <!-- <td>{{i.password}}</td> -->
+                <td>{{i.mobile}}</td>
+                <!-- <td><button>UPDATE</button> <button (click)="onDeleteEmployee(j)">DELETE</button> </td> -->
+
+            </tr>
+        </tbody>
+    </table>

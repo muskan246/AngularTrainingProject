@@ -1,0 +1,52 @@
+<h3> UPDATE USER BY ID</h3>
+<form [formGroup]="updateForm">
+    <input type="text" placeholder="Enter ID" formControlName="id" required>
+    <br><br>
+    <button type="submit" (click)="onUpdateEmployee()">UPDATE </button>
+
+    <br><br>
+    <div *ngIf="updaterecord!=null">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Mobile Number</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+
+                    <td> {{updaterecord.id}}</td>
+                    <td>
+                        <input type="text" value="{{updaterecord.name}}" formControlName="name">
+                        <span *ngIf="updateForm.controls.name.errors?.pattern">Only alphabets is allowed</span>
+                    </td>
+                    <td>
+                        <input type="text" value="{{updaterecord.email}}" formControlName="email">
+                        <span *ngIf="updateForm.controls.email.errors?.pattern">Provide valid email</span>
+
+                    </td>
+
+                    <td>
+                        <input type="password" value="{{updaterecord.password}}" formControlName="password">
+                        <span *ngIf="updateForm.controls.password.errors?.pattern">Provide valid password</span>
+
+                    </td>
+
+                    <td>
+                        <input type="text" value="{{updaterecord.mobile}}" formControlName="mobile">
+                        <span *ngIf="updateForm.controls.mobile.errors?.pattern">Provide valid Mobile</span>
+
+                    </td>
+                </tr>
+            </tbody>
+            <button type="submit" (click)="updateRecord()">SAVE </button>
+        </table>
+    </div>
+</form>
